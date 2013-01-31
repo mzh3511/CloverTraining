@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net">
+
+  <object id="Repository.UserInfo" type="Clover.Dao.Implement.UserInfoRepository, Clover.Dao">
+    <property name="HibernateTemplate" ref="HibernateTemplate"/>
+  </object>
+
+  <object id="Repository.Forum" type="Clover.Dao.Implement.ForumRepository, Clover.Dao">
+    <property name="HibernateTemplate" ref="HibernateTemplate"/>
+  </object>
+
+  <object id="Repository.Category" type="Clover.Dao.Implement.CategoryRepository, Clover.Dao">
+    <property name="HibernateTemplate" ref="HibernateTemplate"/>
+  </object>
+
+  <object id="Repository.Article" type="Clover.Dao.Implement.ArticleRepository, Clover.Dao">
+    <property name="HibernateTemplate" ref="HibernateTemplate"/>
+  </object>
+  
+</objects>
+

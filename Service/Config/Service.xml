@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net">
+
+  <object id="Manager.UserInfo" parent="BaseTransactionManager">
+    <property name="Target">
+      <object type="Clover.Service.Implement.UserInfoManager, Clover.Service">
+        <property name="CurrentRepository" ref="Repository.UserInfo"/>
+      </object>
+    </property>
+  </object>
+
+  <object id="Manager.Forum" parent="BaseTransactionManager">
+    <property name="Target">
+      <object type="Clover.Service.Implement.ForumManager, Clover.Service">
+        <property name="CurrentRepository" ref="Repository.Forum"/>
+      </object>
+    </property>
+  </object>
+
+  <object id="Manager.Category" parent="BaseTransactionManager">
+    <property name="Target">
+      <object type="Clover.Service.Implement.CategoryManager, Clover.Service">
+        <property name="CurrentRepository" ref="Repository.Category"/>
+      </object>
+    </property>
+  </object>
+
+  <object id="Manager.Article" parent="BaseTransactionManager">
+    <property name="Target">
+      <object type="Clover.Service.Implement.ArticleManager, Clover.Service">
+        <property name="CurrentRepository" ref="Repository.Article"/>
+      </object>
+    </property>
+  </object>
+</objects>
+

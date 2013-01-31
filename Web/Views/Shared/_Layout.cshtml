@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - 四叶草培训教室</title>
+    <link href="~/Clover.png" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="~/Content/reset.css" type="text/css" media="all">
+    <link rel="stylesheet" href="~/Content/layout.css" type="text/css" media="all">
+    <link rel="stylesheet" href="~/Content/style.css" type="text/css" media="all">
+    <script type="text/javascript" src="~/Scripts/jquery-1.7.1.js"></script>
+    <script type="text/javascript" src="~/Scripts/cufon-yui.js"></script>
+    <script type="text/javascript" src="~/Scripts/cufon-replace.js"></script>
+    <script type="text/javascript" src="~/Scripts/Copse_400.font.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.nivo.slider.pack.js"></script>
+    <script type="text/javascript" src="~/Scripts/imagepreloader.js"></script>
+    <script type="text/javascript">
+	preloadImages([
+	'../Images/menu1_active.gif',
+	'../Images/menu2_active.gif',
+	'../Images/menu3_active.gif',
+	'../Images/menu4_active.gif',
+	'../Images/marker_right_active.jpg',
+	'../Images/marker_left_active.jpg',
+	'../Images/menu5_active.gif']);
+    </script>
+</head>
+<body id="page1">
+    <div class="body1">
+        <div class="body2">
+            <div class="main">
+                <header>
+                    <div class="wrapper">
+                        <h1><a href="#" id="logo">First</a></h1>
+                        <div class="right">
+                        </div>
+                    </div>
+                    <nav id="menu">
+                        <ul>
+                            <li class="nav1" id="active"><a href="~">Home</a></li>
+                            <li class="nav2"><a href="~">News</a></li>
+                            <li class="nav3"><a href="~">Services</a></li>
+                            <li class="nav4"><a href="~">Products</a></li>
+                            <li class="nav5"><a href="~">Contact</a></li>
+                        </ul>
+                    </nav>
+                </header>
+            </div>
+        </div>
+    </div>
+    <div class="body3">
+        <div class="body4">
+            <div class="main">
+                <div class="slogan">
+                    <div id="slider">
+                        <img src="~/Images/text1.jpg" alt="">
+                        <img src="~/Images/text2.jpg" alt="">
+                        <img src="~/Images/text3.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="body">
+        @RenderSection("featured", required: false)
+        <section class="content-wrapper main-content clear-fix">
+            @RenderBody()
+        </section>
+    </div>
+    <footer>
+        <div class="content-wrapper">
+            <div class="float-left">
+                <p>&copy; @DateTime.Now.Year - 四叶草培训教室</p>
+            </div>
+        </div>
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
