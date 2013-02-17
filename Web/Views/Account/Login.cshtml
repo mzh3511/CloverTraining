@@ -2,49 +2,147 @@
 
 @{
     ViewBag.Title = "登录";
+    Layout = null;
 }
 
-<hgroup class="title">
-    <h1>@ViewBag.Title.</h1>
-</hgroup>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>登录页面</title>
+    <style type="text/css">
+        body
+        {
+            font-size: 12px;
+            background-color: #D9E1F4;
+            margin: 0;
+            padding: 0;
+        }
 
-<section id="loginForm">
-<h2>使用本地帐户登录。</h2>
-@using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl })) {
-    @Html.AntiForgeryToken()
-    @Html.ValidationSummary(true)
+        .login_all
+        {
+            position: absolute;
+            width: 427px;
+            height: 205px;
+            left: 50%;
+            top: 50%;
+            margin-left: -213px;
+            margin-top: -100px;
+        }
 
-    <fieldset>
-        <legend>“登录”表单</legend>
-        <ol>
-            <li>
-                @Html.LabelFor(m => m.UserName)
-                @Html.TextBoxFor(m => m.UserName)
-                @Html.ValidationMessageFor(m => m.UserName)
-            </li>
-            <li>
-                @Html.LabelFor(m => m.Password)
-                @Html.PasswordFor(m => m.Password)
-                @Html.ValidationMessageFor(m => m.Password)
-            </li>
-            <li>
-                @Html.CheckBoxFor(m => m.RememberMe)
-                @Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })
-            </li>
-        </ol>
-        <input type="submit" value="登录" />
-    </fieldset>
-    <p>
-        @Html.ActionLink("Register", "Register") (如果你没有帐户)。
-    </p>
-}
-</section>
+        .login_title
+        {
+            background-repeat: no-repeat;
+            background-position: center center;
+            text-align: center;
+            text-shadow: 0 0 20px cornflowerblue;
+            border: 0px solid #869CB3;
+            font-size: large;
+            color: #2A5170;
+            height: 40px;
+            width: 427px;
+        }
 
-<section class="social" id="socialLoginForm">
-    <h2>使用其他服务登录。</h2>
-    @Html.Action("ExternalLoginsList", new { ReturnUrl = ViewBag.ReturnUrl })
-</section>
+        .login_bg
+        {
+            background-image: url(../../Images/Login/login_bg.gif);
+            background-repeat: no-repeat;
+            background-position: 0px 0px;
+            height: 170px;
+            width: 392px;
+            padding: 55px 0 0 35px;
+        }
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+        .login_form_top
+        {
+            color: #2A5170;
+            height: auto;
+            width: auto;
+        }
+
+            .login_form_top p
+            {
+                height: 30px;
+                width: auto;
+            }
+
+        .login_form_bottom
+        {
+            text-indent: 50px;
+            height: auto;
+            width: auto;
+        }
+
+        .login_copyright
+        {
+            color: #547B9A;
+            text-align: right;
+        }
+
+        .login_input
+        {
+            height: 16px;
+            width: 128px;
+            border: 1px solid #869CB3;
+        }
+
+        .login_submit
+        {
+            background-image: url(../../Images/Login/login_button.png);
+            background-repeat: no-repeat;
+            background-position: 0px 0px;
+            height: 20px;
+            width: 47px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .login_button
+        {
+            background-image: url(../../Images/Login/cancel_button.png);
+            background-repeat: no-repeat;
+            background-position: 0px 0px;
+            height: 20px;
+            width: 47px;
+            border: none;
+            cursor: pointer;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login_all">
+        <div class="login_title">
+            <p>登录四叶草培训教室后天管理系统</p>
+        </div>
+
+        <div class="login_bg">
+            @using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl }))
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true)
+                <fieldset style="border: 0px">
+                    <div class="login_form_top">
+                        <p>
+                            用户名：
+                            @Html.TextBoxFor(m => m.UserName, new { @class = "login_input" })
+                            @Html.ValidationMessageFor(m => m.UserName)
+                        </p>
+                        <p>
+                            密&nbsp;&nbsp;&nbsp;&nbsp;码：
+                            @Html.PasswordFor(m => m.Password, new { @class = "login_input" })
+                            @Html.ValidationMessageFor(m => m.Password)
+                        </p>
+                    </div>
+                    <div class="login_form_bottom">
+                        <input type="submit" name="Submit1" value="" class="login_submit" />
+                        <input type="button" name="Submit2" value="" class="login_button" />
+                    </div>
+                </fieldset>
+            }
+        </div>
+        <div class="login_copyright">版权所有：四叶草培训教室</div>
+    </div>
+</body>
+</html>
