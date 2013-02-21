@@ -2,23 +2,23 @@
 <objects xmlns="http://www.springframework.net">
 
   <object type="Clover.Web.Controllers.HomeController, Clover.Web" singleton="false" >
-    <property name="UserInfoManager" ref="Manager.UserInfo"/>
     <property name="CategoryManager" ref="Manager.Category"/>
-    <property name="ForumManager" ref="Manager.Forum"/>
-    <property name="Message" value="Hello World" />
+    <property name="ArticleManager" ref="Manager.Article"/>
   </object>
 
-  <object type="Clover.Web.Controllers.UserInfoController, Clover.Web" singleton="false" >
+  <!--<object type="Clover.Web.Controllers.UserInfoController, Clover.Web" singleton="false" >
     <property name="UserInfoManager" ref="Manager.UserInfo"/>
+  </object>-->
+  <object type="Clover.Web.Controllers.ManageController, Clover.Web" singleton="false" >
+    <property name="ArticleManager" ref="Manager.Article"/>
   </object>
 
-  <object type="Clover.Web.Controllers.ForumController, Clover.Web" singleton="false" >
+  <!--<object type="Clover.Web.Controllers.ForumController, Clover.Web" singleton="false" >
     <property name="ForumManager" ref="Manager.Forum"/>
-  </object>
+  </object>-->
 
   <object type="Clover.Web.Controllers.CategoryController, Clover.Web" singleton="false" >
     <property name="CategoryManager" ref="Manager.Category"/>
-    <property name="ForumManager" ref="Manager.Forum"/>
     <property name="ArticleManager" ref="Manager.Article"/>
   </object>
 

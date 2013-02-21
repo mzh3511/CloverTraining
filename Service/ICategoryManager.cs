@@ -8,10 +8,6 @@ namespace Clover.Service
 {
     public interface ICategoryManager : IGenericManager<Category>
     {
-        IList<Category> LoadAllByPage(out long total, int page, int rows, string order, string sort);
-
-        IList<Category> LoadAllEnable();
-
-        IList<Category> LoadAllEnable(Guid forumId);
+        IList<Category> GetSysCategory();
     }
 }

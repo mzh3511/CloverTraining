@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using System.Web.Security;
 //using DotNetOpenAuth.AspNet;
 //using Microsoft.Web.WebPages.OAuth;
+using Clover.Service;
 using WebMatrix.WebData;
 //using Clover.Web.Filters;
 using Clover.Web.Models;
@@ -17,6 +18,8 @@ namespace Clover.Web.Controllers
     //[InitializeSimpleMembership]
     public class AccountController : Controller
     {
+        //public IUserInfoManager UserInfoManager { get; set; }
+
         //
         // GET: /Account/Login
 
@@ -35,10 +38,10 @@ namespace Clover.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Login(LoginModel model, string returnUrl)
         {
-            if (ModelState.IsValid && WebSecurity.Login(model.UserName, model.Password, persistCookie: model.RememberMe))
-            {
-                return RedirectToLocal(returnUrl);
-            }
+            //if (ModelState.IsValid && UserInfoManager.Login(model.UserName, model.Password))
+            //{
+            //    return RedirectToLocal(returnUrl);
+            //}
 
             // 如果我们进行到这一步时某个地方出错，则重新显示表单
             ModelState.AddModelError("", "提供的用户名或密码不正确。");
@@ -60,11 +63,11 @@ namespace Clover.Web.Controllers
         //
         // GET: /Account/Register
 
-        [AllowAnonymous]
-        public ActionResult Register()
-        {
-            return View();
-        }
+        //[AllowAnonymous]
+        //public ActionResult Register()
+        //{
+        //    return View();
+        //}
 
         //
         // POST: /Account/Register

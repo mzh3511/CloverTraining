@@ -15,5 +15,7 @@ namespace Clover.Service
         UserInfo Get(string account, string password);
 
         void Update(UserInfo entity, string password);
+
+        bool Login(string userName, string password);
     }
 }

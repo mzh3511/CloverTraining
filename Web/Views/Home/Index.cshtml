@@ -1,45 +1,122 @@
 ﻿@{
     ViewBag.Title = "主页";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@section featured {
-    <section class="featured">
-        <div class="content-wrapper">
-            <hgroup class="title">
-                <h1>@ViewBag.Title.</h1>
-                <h2>@ViewBag.Message</h2>
-            </hgroup>
-            <p>
-                若要了解有关 ASP.NET MVC 的详细信息，请访问
-                <a href="http://asp.net/mvc" title="ASP.NET MVC Website">http://asp.net/mvc</a>。
-                该页提供 <mark>视频、教程和示例</mark> 以帮助你充分利用 ASP.NET MVC。
-                如果你对 ASP.NET MVC 有任何疑问，请访问
-                <a href="http://forums.asp.net/1146.aspx/1?MVC" title="ASP.NET MVC Forum">我们的论坛</a>。
-            </p>
+<link rel="stylesheet" href="~/Content/nivo-slider3.2/nivo-slider/themes/default/default.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="~/Content/nivo-slider3.2/nivo-slider/themes/light/light.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="~/Content/nivo-slider3.2/nivo-slider/themes/dark/dark.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="~/Content/nivo-slider3.2/nivo-slider/themes/bar/bar.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="~/Content/nivo-slider3.2/nivo-slider/nivo-slider.css" type="text/css" media="screen" />
+<style>
+    .title
+    {
+        text-align: center;
+        font-weight: bold;
+        font-size: large;
+        color: rgb(178, 19, 13);
+    }
+
+    .detail_radius
+    {
+        text-align: center;
+        width: 110px;
+        height: 21px;
+        background-color: rgb(178, 19, 13);
+        border-radius: 5px;
+    }
+        .detail_link,a, a:link, a:visited
+    {
+        color: white;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    .cell
+    {
+        background-color: transparent;
+        background-repeat: no-repeat;
+        width: 233px;
+        height: 180px;
+    }
+</style>
+<div>
+    <div>
+        <img src="~/Images/Index/middle.jpg" style="width: 100%" />
+    </div>
+    <div>
+        <table style="background-color: #5caf5c; width: 100%">
+            <tr>
+                <td class="cell" style="background-image: url(/Images/Index/middle_idea.png)">
+                    <div style="float: right; width: 120px">
+                        <span class="title">教学理念</span>
+                        <br />
+                        <span style="text-wrap: normal">
+                            <br />
+                            私たちはいちばん優しい中国語教室を目指します<br />
+                            <br />
+                        </span>
+                        <br />
+                        <div class="detail_radius">@Html.ActionLink("詳しくはこちらへ", "Idea", "Home",null,new { @class = "detail_link" })</div>
+                    </div>
+                </td>
+                <td class="cell" style="background-image: url(/Images/Index/middle_environment.png)">
+                    <div style="float: right; width: 120px">
+                        <span class="title">学习环境</span>
+                        <br />
+                        <span style="text-wrap: normal">
+                            <br />
+                            私たちはいちばん優しい中国語教室を目指します<br />
+                            <br />
+                        </span>
+                        <br />
+                        <div class="detail_radius">詳しくはこちらへ</div>
+                    </div>
+                </td>
+                <td class="cell" style="background-image: url(/Images/Index/middle_feel.png)">
+                    <div style="float: right; width: 120px">
+                        <span class="title">学员感言</span>
+                        <br />
+                        <span style="text-wrap: normal">
+                            <br />
+                            私たちはいちばん優しい中国語教室を目指します<br />
+                            <br />
+                        </span>
+                        <br />
+                        <div class="detail_radius">詳しくはこちらへ</div>
+                    </div>
+                </td>
+                <td class="cell" style="background-image: url(/Images/Index/middle_experience.png)">
+                    <div style="float: right; width: 120px">
+                        <span class="title">免费体验</span>
+                        <br />
+                        <span style="text-wrap: normal">
+                            <br />
+                            私たちはいちばん優しい中国語教室を目指します<br />
+                            <br />
+                        </span>
+                        <br />
+                        <div class="detail_radius">体験申し込み</div>
+                    </div>
+                </td>
+
+            </tr>
+        </table>
+    </div>
+    @*    <div class="slider-wrapper theme-dark">
+        <div id="slider" class="nivoSlider">
+            <img src="~/Images/Index/middle_turn1.png" alt="">
+            <img src="~/Images/Index/middle_turn2.png" alt="">
+            <img src="~/Images/Index/middle_turn3.png" alt="">
         </div>
-    </section>
-}
-<h3>下面是我们的建议:</h3>
-<ol class="round">
-    <li class="one">
-        <h5>开始使用</h5>
-        ASP.NET MVC 为你提供了一种用于生成动态网站的方式，
-        该方式基于模式，十分强大，使你可以清晰地分离各种考虑因素，让你能够完全控制标记，
-            以便进行灵活而有趣的开发。ASP.NET MVC 包括许多功能，你可以使用这些功能进行
-            TDD 友好的快速开发，以创建使用
-            最新 Web 标准的复杂应用程序。
-            <a href="http://go.microsoft.com/fwlink/?LinkId=245151">了解详细信息...</a>
-    </li>
-
-    <li class="two">
-        <h5>添加 NuGet 程序包并快速开始编码</h5>
-        通过 NuGet，可以轻松地安装和更新免费的库和工具。
-            <a href="http://go.microsoft.com/fwlink/?LinkId=245153">了解详细信息...</a>
-    </li>
-
-    <li class="three">
-        <h5>查找 Web 宿主</h5>
-        你可以轻松找到所提供的功能和价格
-      都适合你应用程序的 Web 宿主公司。
-            <a href="http://go.microsoft.com/fwlink/?LinkId=245157">了解详细信息...</a>
-    </li>
-</ol>
+        <div id="htmlcaption" class="nivo-html-caption">
+            <strong>图片标题</strong>，支持HTML标签 <a href="http://www.helloweba.com">helloweba.com</a>. 
+        </div>
+    </div>*@
+</div>
+<script type="text/javascript" src="~/Content/nivo-slider3.2/nivo-slider/demo/scripts/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="~/Content/nivo-slider3.2/nivo-slider/jquery.nivo.slider.js"></script>
+<script type="text/javascript">
+    $(window).load(function () {
+        $('#slider').nivoSlider();
+    });
+</script>

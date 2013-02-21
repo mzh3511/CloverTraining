@@ -43,13 +43,9 @@
   <ItemGroup>
     <Compile Include="GenericManagerBase`1.cs" />
     <Compile Include="IGenericManager`1.cs" />
-    <Compile Include="Implement\UserInfoManager.cs" />
-    <Compile Include="Implement\ForumManager.cs" />
     <Compile Include="Implement\CategoryManager.cs" />
     <Compile Include="Implement\ArticleManager.cs" />
-    <Compile Include="IUserInfoManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="IForumManager.cs" />
     <Compile Include="ICategoryManager.cs" />
     <Compile Include="IArticleManager.cs" />
   </ItemGroup>

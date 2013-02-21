@@ -18,7 +18,7 @@ namespace Clover.Web
 
     public class MvcApplication : Spring.Web.Mvc.SpringMvcApplication
     {
-        private static Common.Logging.ILog logger = Common.Logging.LogManager.GetLogger(typeof (MvcApplication));
+        private static Common.Logging.ILog logger = Common.Logging.LogManager.GetLogger(typeof(MvcApplication));
 
         protected void Application_Start(object sender, EventArgs e)
         {
@@ -39,38 +39,33 @@ namespace Clover.Web
 
             //this.SetInitAccount();
         }
+        //protected override void ConfigureApplicationContext()
+        //{
+        //    base.ConfigureApplicationContext();
 
-        /// <summary>
-        /// 设置初始账号
-        /// </summary>
-        private void SetInitAccount()
-        {
-            while(!ContextRegistry.IsContextRegistered("spring.root"))
-            {
-                System.Threading.Thread.Sleep(500);
-            }
+        //    while (!ContextRegistry.IsContextRegistered("spring.root"))
+        //    {
+        //        System.Threading.Thread.Sleep(500);
+        //    }
 
 
 
-            IApplicationContext cxt = ContextRegistry.GetContext();
-            IUserInfoManager manger = (IUserInfoManager)cxt.GetObject("Manager.UserInfo");
+        //    IApplicationContext cxt = ContextRegistry.GetContext();
+        //}
+        //public override void Init()
+        //{
+        //    base.Init();
+        //    while (!ContextRegistry.IsContextRegistered("spring.root"))
+        //    {
+        //        System.Threading.Thread.Sleep(500);
+        //    }
 
-            const string account = "admin";
-            var user = manger.Get(account);
-            if (user == null)
-            {
-                user = new Domain.UserInfo
-                {
-                    Account = account,
-                    Name = "管理员",
-                    ID = Guid.NewGuid(),
-                    CreateTime = DateTime.Now,
-                    IsEnabled = true
-                };
 
-                manger.Save(user);
-            }
-        }
+
+        //    IApplicationContext cxt = ContextRegistry.GetContext();
+
+        //}
+
 
         protected void RegisterRoutes(RouteCollection routes)
         {
@@ -108,6 +103,12 @@ namespace Clover.Web
                 new { controller = "Article", action = "Get" }, // 参数默认值
                 new { id = guidRegx }
             );
+            routes.MapRoute(
+                "Article", // 路由名称
+                "Article/Index{id}.html", // 带有参数的 URL
+                new { controller = "Article", action = "Get" }, // 参数默认值
+                new { id = guidRegx }
+                );
 
             routes.MapRoute(
                 "Index", // 路由名称
@@ -153,9 +154,9 @@ namespace Clover.Web
 
         protected void Session_Start()
         {
-            this.Session["isCN"] = this.Request.UserLanguages.Length < 1 
-                || string.IsNullOrEmpty(this.Request.UserLanguages[0]) 
-                || this.Request.UserLanguages[0].ToLower() == "zh-cn";
+            //this.Session["isCN"] = this.Request.UserLanguages.Length < 1
+            //    || string.IsNullOrEmpty(this.Request.UserLanguages[0])
+            //    || this.Request.UserLanguages[0].ToLower() == "zh-cn";
         }
     }
 

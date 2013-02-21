@@ -58,5 +58,10 @@ namespace Clover.Service.Implement
             entity.Password = this.HashCode(entity.Account.ToUpper() + password + entity.CreateTime.ToLongDateString());
             base.Update(entity);
         }
+
+        public bool Login(string userName, string password)
+        {
+            return "admin".Equals(userName, StringComparison.InvariantCultureIgnoreCase) && "Admin@123".Equals(password, StringComparison.InvariantCultureIgnoreCase);
+        }
     }
 }
