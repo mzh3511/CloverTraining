@@ -6,11 +6,12 @@
     <property name="ArticleManager" ref="Manager.Article"/>
   </object>
 
-  <!--<object type="Clover.Web.Controllers.UserInfoController, Clover.Web" singleton="false" >
+  <object type="Clover.Web.Controllers.AccountController, Clover.Web" singleton="false" >
     <property name="UserInfoManager" ref="Manager.UserInfo"/>
-  </object>-->
+  </object>
   <object type="Clover.Web.Controllers.ManageController, Clover.Web" singleton="false" >
     <property name="ArticleManager" ref="Manager.Article"/>
+    <property name="CategoryManager" ref="Manager.Category"/>
   </object>
 
   <!--<object type="Clover.Web.Controllers.ForumController, Clover.Web" singleton="false" >

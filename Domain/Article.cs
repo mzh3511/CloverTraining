@@ -10,7 +10,6 @@ namespace Clover.Domain
         public virtual int ID { get; set; }
         public virtual string Title { get; set; }
         public virtual string Content { get; set; }
-        public virtual bool IsEnabled { get; set; }
         public virtual Category Category { get; set; }
     }
 }

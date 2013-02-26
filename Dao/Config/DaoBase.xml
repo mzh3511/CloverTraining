@@ -12,7 +12,7 @@
 
   <!--SessionFactory对象-->
   <object id="NHibernateSessionFactory" 
-          type="Spring.Data.NHibernate.LocalSessionFactoryObject, Spring.Data.NHibernate32">
+          type="Spring.Data.NHibernate.LocalSessionFactoryObject, Spring.Data.NHibernate33">
     <property name="DbProvider" ref="DbProvider"/>
     <property name="MappingAssemblies">
       <list>
@@ -22,7 +22,7 @@
     <property name="HibernateProperties">
       <dictionary>
         <entry key="hibernate.current_session_context_class" 
-               value="Spring.Data.NHibernate.SpringSessionContext, Spring.Data.NHibernate32"/>
+               value="Spring.Data.NHibernate.SpringSessionContext, Spring.Data.NHibernate33"/>
 
         <entry key="hibernate.connection.provider" 
                value="NHibernate.Connection.DriverConnectionProvider"/>

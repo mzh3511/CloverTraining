@@ -14,21 +14,29 @@
     <property name="IsSystem" type="bool">
       <column name="IsSystem" not-null="true"/>
     </property>
-
+    
+    <!--启用-->
+    <property name="IsEnabled" type="bool">
+      <column name="IsEnabled" not-null="true"/>
+    </property>
+    
     <property name="MenuText" type="string">
       <column name="MenuText" length="40" not-null="true"/>
     </property>
 
     <property name="MenuPriority" type="int">
-      <column name="Name" />
+      <column name="MenuPriority" />
     </property>
     
     <!--文章-->
-    <bag name="SubCategories" generic="true" inverse="true" cascade="all-delete-orphan" table="T_Article">
+    <bag name="SubCategories" generic="true" inverse="true" lazy="false" cascade="all-delete-orphan">
       <key column="ParentID" foreign-key="FK_Category_Category"/>
       <one-to-many class="Category"/>
     </bag>
-    <one-to-one name="Article" class="Clover.Domain.Article,Clover.Domain" cascade="all"></one-to-one>
+    <one-to-one name="Article" class="Clover.Domain.Article,Clover.Domain" lazy="false" cascade="all"  property-ref="Category"></one-to-one>
+    <many-to-one name="ParentCategory" lazy="false" class="Clover.Domain.Category,Clover.Domain" cascade="all">
+      <column name="ParentId"/>
+    </many-to-one>
   </class>
 
 </hibernate-mapping>

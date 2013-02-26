@@ -24,7 +24,8 @@
         background-color: rgb(178, 19, 13);
         border-radius: 5px;
     }
-        .detail_link,a, a:link, a:visited
+
+    .detail_link, a, a:link, a:visited
     {
         color: white;
         font-weight: bold;
@@ -38,10 +39,16 @@
         width: 233px;
         height: 180px;
     }
+    .image {
+        margin: 0;
+        padding: 0;
+        vertical-align: bottom;
+        display: block;
+    }
 </style>
 <div>
-    <div>
-        <img src="~/Images/Index/middle.jpg" style="width: 100%" />
+    <div style="background-color: crimson">
+        <img src="~/Images/Index/middle.jpg" style="width: 100%" class="image" />
     </div>
     <div>
         <table style="background-color: #5caf5c; width: 100%">
@@ -56,7 +63,7 @@
                             <br />
                         </span>
                         <br />
-                        <div class="detail_radius">@Html.ActionLink("詳しくはこちらへ", "Idea", "Home",null,new { @class = "detail_link" })</div>
+                        <div class="detail_radius">@Html.ActionLink("詳しくはこちらへ", "Idea", "Home", null, new { @class = "detail_link" })</div>
                     </div>
                 </td>
                 <td class="cell" style="background-image: url(/Images/Index/middle_environment.png)">
@@ -99,6 +106,24 @@
                     </div>
                 </td>
 
+            </tr>
+        </table>
+    </div>
+    <div>
+        <table style="background-color: #5caf5c">
+            <tr>
+                <td style="padding: 0;margin: 0"><a href="http://www.demaekan.cn/" target="_blank">
+                    <img src="~/Images/Link/130.png" height="69" width="200" class="image"></a></td>
+                <td style="padding: 0;margin: 0"><a href="http://yahoo.co.jp" target="_blank">
+                    <img src="~/Images/Link/131.png" height="69" width="155" class="image"></a></td>
+                <td style="padding: 0;margin: 0"><a href="http://www.shwalker.com/" target="_blank">
+                    <img src="~/Images/Link/132.png" height="69" width="167" class="image"></a></td>
+                <td style="padding: 0;margin: 0"><a href="http://www.jct-test.com" target="_blank">
+                    <img src="~/Images/Link/133.png" height="69" width="155" class="image"></a></td>
+                <td style="padding: 0;margin: 0"><a href="http://www.msn.co.jp" target="_blank">
+                    <img src="~/Images/Link/134.png" height="69" width="129" class="image"></a></td>
+                <td style="padding: 0;margin: 0"><a href="http://dict.hjenglish.com/jp" target="_blank">
+                    <img src="~/Images/Link/135.png" height="69" width="142" class="image"></a></td>
             </tr>
         </table>
     </div>

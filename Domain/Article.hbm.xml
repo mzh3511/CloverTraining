@@ -11,22 +11,15 @@
       <generator class="increment" />
     </id>
 
-
-
     <property name="Title" type="string">
-      <column name="Name" length="50" not-null="true"/>
+      <column name="Name" length="50" not-null="false"/>
     </property>
 
     <property name="Content" type="string">
       <column name="Content" length="5000" not-null="false"/>
     </property>
-
-    <!--启用-->
-    <property name="IsEnabled" type="bool">
-      <column name="IsEnabled" not-null="true"/>
-    </property>
-
-    <many-to-one name="Category" class="Clover.Domain.Category,Clover.Domain" column="CategoryId"  unique="true"></many-to-one>
+    
+    <many-to-one name="Category" lazy="false" class="Clover.Domain.Category,Clover.Domain" column="CategoryId"  unique="true"></many-to-one>
 
   </class>
 
